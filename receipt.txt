@@ -1,0 +1,6 @@
+--- SALES RECEIPT ---
+Customer: f
+Product: f
+Quantity: 3.0
+Price per Item: 3.0
+Total: 9.0
