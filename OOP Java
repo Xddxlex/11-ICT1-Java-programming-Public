@@ -133,3 +133,99 @@ final	       Value/method/class cannot be changed
 abstract	   Used to create incomplete classes/methods
 interface	   Contract of methods a class must implement
 new	         Creates objects
+
+
+=====================================================
+// ==========================
+//  PARENT CLASS (Superclass)
+// ==========================
+class Person {
+    // 1. ATTRIBUTES (Fields) — Usually private
+    private String name;
+    private int age;
+
+    // 2. CONSTRUCTOR — used to create objects
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // 3. GETTERS — return (read) private values
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // 4. SETTERS — change (write) private values
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // 5. METHOD — behavior of a class
+    public void introduce() {
+        System.out.println("Hi, I am " + name + " and I am " + age + " years old.");
+    }
+}
+
+
+
+// ==================================
+// CHILD CLASS (Subclass / Inheritance)
+// ==================================
+class Student extends Person {
+    private String studentID;
+
+    // Student constructor calls Person constructor using super()
+    public Student(String name, int age, String studentID) {
+        super(name, age); // calls Person(name, age)
+        this.studentID = studentID;
+    }
+
+    public String getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
+    }
+
+    // Overriding method (same method name, new behavior)
+    @Override
+    public void introduce() {
+        System.out.println("Hi, I am " + getName() + ", Student ID: " + studentID);
+    }
+}
+
+
+
+// ==============================
+// MAIN CLASS — Program execution
+// ==============================
+public class Main {
+    public static void main(String[] args) {
+
+        // Creating an object of Person
+        Person p1 = new Person("John", 30);
+        p1.introduce();
+
+        // Creating an object of Student
+        Student s1 = new Student("Francis", 17, "2025-001");
+        s1.introduce();
+
+        // Using getters and setters
+        s1.setName("Francis Andre");
+        s1.setStudentID("2025-777");
+
+        System.out.println("Updated Name: " + s1.getName());
+        System.out.println("Updated ID: " + s1.getStudentID());
+    }
+}
+
+=====================================================
