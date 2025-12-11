@@ -1,0 +1,135 @@
+OOP Java 
+1. Structure of an OOP Class (Java)
+A typical OOP class includes:
+Fields (attributes/variables)
+Constructor
+Getters and Setters
+========================================================
+class ClassName {
+
+    // 1. Private fields
+    private DataType field1;
+    private DataType field2;
+
+    // 2. Constructor
+    public ClassName(DataType field1, DataType field2) {
+        this.field1 = field1;
+        this.field2 = field2;
+    }
+
+    // 3. Getters
+    public DataType getField1() {
+        return field1;
+    }
+
+    // 4. Setters
+    public void setField1(DataType field1) {
+        this.field1 = field1;
+    }
+
+    // 5. Methods
+    public void exampleMethod() {
+        System.out.println("Doing something...");
+    }
+}
+======================================================
+
+Why Use Getters and Setters?
+
+Because of a core OOP principle: Encapsulation.
+Fields are private → cannot be accessed directly from outside.
+Getters allow reading a private value.
+Setters allow controlled modification of private values.
+======================================================
+private int age;
+
+public int getAge() {
+    return age;
+}
+
+public void setAge(int age) {
+    this.age = age;
+}
+======================================================
+
+Full CODE STRUCTURE 
+=====================================================
+class Student {
+    // Fields
+    private String name;
+    private int age;
+
+    // Constructor
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getter
+    public String getName() {
+        return name;
+    }
+
+    // Setter
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Method
+    public void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+=====================================================
+
+
+The 4 Pillars of OOP (with explanation)
+1. Encapsulation
+
+Binding data and methods into one unit (class).
+Hiding data using private.
+Accessing with getters/setters.
+
+2. Inheritance
+
+One class gets properties/methods of another class.
+Uses the keyword extends.
+Example:
+class Student extends Person { }
+
+3. Polymorphism
+
+A method behaves differently based on the object calling it.
+Method Overloading (same method name, different parameters).
+Method Overriding (child class changes parent method behavior).
+
+4. Abstraction
+
+Showing essential features while hiding complexity.
+Done through abstract classes or interfaces.
+
+5. Important OOP Keywords (Java)
+Keyword	Meaning
+class	Defines a class
+object	     An instance of a class
+private	     Attribute/method visible only inside the class
+public	     Accessible from anywhere
+protected	   Accessible by class, subclass, package
+this	       Refers to the current object
+extends	     Used in inheritance
+super	       Refers to parent class
+static	     Belongs to the class, not to an object
+final	       Value/method/class cannot be changed
+abstract	   Used to create incomplete classes/methods
+interface	   Contract of methods a class must implement
+new	         Creates objects
